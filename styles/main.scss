@@ -1,4 +1,77 @@
+@import 'colors';
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  color: $secondary-text-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-wrap {
+  height: 100vh;
   display: flex;
-  background-color: lightseagreen;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 10px;
+  color: $primary-color-text;
+  background-color: $primary-color;
+  height: 80px;
+  border-bottom: 2px solid #fff59d;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    color: $primary-color-text;
+  }
+}
+
+.app-header > a {
+  background-color: rgba(10, 255, 255, 0.2);
+  padding: 10px;
+}
+
+.content {
+  background: #fafafa;
+  line-height: 1.8;
+  padding: 16px;
+  overflow-y: scroll; 
+  flex-grow: 1;
+}
+
+.app-footer {
+  height: 80px;
+  background: $primary-color;
+  border-top: 1px solid #e6e6e6;
+  flex-shrink: 0;
+  display: flex;
+
+  a {
+    padding: 15px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    flex-grow: 1;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    &:first-child {
+      border-left: 0;
+    }
+
+    i {
+      display: block;
+      font-size: 25px;
+      color: white;
+      text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+      padding-bottom: 10px;
+    }
+  }
 }

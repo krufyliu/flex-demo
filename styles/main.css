@@ -106,6 +106,9 @@ a
 }
 .app-footer a
 {
+    display: block;
+
+    width: 0;
     padding: 15px;
 
     text-align: center;
@@ -114,13 +117,17 @@ a
     border-left: 2px solid rgba(0, 0, 0, .1); 
 
     -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-            flex-grow: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 .app-footer a:first-child
 {
     border-left: 0;
+}
+.app-footer a:hover
+{
+    border-bottom: 4px solid #ff4081;
 }
 .app-footer a i
 {
@@ -132,4 +139,53 @@ a
 
     color: white;
     text-shadow: 3px 3px 0 rgba(0, 0, 0, .1);
+}
+.app-footer a.active
+{
+    border-bottom: 4px solid #ff4081;
+}
+
+.flex-container
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.flex-container .flex-item:first-child
+{
+    margin-left: 20px;
+}
+.flex-container .flex-item:last-child
+{
+    margin-right: 20px;
+}
+
+.flex-item
+{
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 50px;
+
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+
+    text-align: center; 
+
+    color: white;
+    background: tomato;
 }

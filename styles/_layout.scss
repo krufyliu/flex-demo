@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  color: $secondary-text-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-wrap {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 10px;
+  color: $primary-color-text;
+  background-color: $primary-color;
+  height: 60px;
+  border-bottom: 2px solid #fff59d;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    color: $primary-color-text;
+  }
+}
+
+.app-header > a {
+  background-color: rgba(10, 255, 255, 0.2);
+  padding: 10px;
+}
+
+.sidebar {
+  display: none;
+  width: 300px;
+  background-color: $primary-color;
+  a {
+    display: flex;
+    padding: 20px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.5);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    i {
+      color: #fff;
+      text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  a.active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    border-bottom: 2px solid #fff59d;
+  }
+}
+
+.content {
+  background: #fafafa;
+  line-height: 1.8;
+  padding: 16px;
+  overflow-y: scroll; 
+  flex-grow: 1;
+}
+
+.app-footer {
+  height: 60px;
+  background: $primary-color;
+  border-top: 1px solid #e6e6e6;
+  flex-shrink: 0;
+  display: flex;
+
+  a {
+    display: block;
+    width: 0%;
+    padding: 5px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    flex: 1;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    &:first-child {
+      border-left: 0;
+    }
+    &:hover {
+      border-bottom: 4px solid $accent-color;
+    }
+
+    i {
+      display: block;
+      font-size: 25px;
+      color: white;
+      text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+      padding-bottom: 5px;
+    }
+  }
+
+  a.active {
+    border-bottom: 4px solid $accent-color;
+  }
+}
+
+@media (min-width: 800px) {
+  .app-wrap {
+    flex-direction: row;
+  }
+  .app-header, .app-footer {
+    display: none;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.flex-container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  .flex-item {
+    &:first-child {
+      margin-left: 20px;
+    }
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  // margin: 5px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
